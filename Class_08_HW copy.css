@@ -1,0 +1,32 @@
+.button {
+	font-size: 1em;
+	color: black;
+	width: 40px;
+	height: 30px;
+	border-radius: 8px;
+	font-weight: bolder;
+}
+
+.equalsbutton {
+	font-size: 1em;
+	color: black;
+	width: 220px;
+	height: 30px;
+	border-radius: 8px;
+	font-weight: bolder;
+}
+
+.container {
+	background-image: url(https://www.thecalmzone.net/wp-content/uploads/2010/11/Digital-Number-Background.jpg);
+	height: 200px;
+	width: 220px;
+	border-radius: 8px;
+	padding: 20px;
+	padding-bottom: 30px;
+}
+
+#displayfield {
+	width: 220px;
+	height: 30px;
+	background-color: #d3d3d3;
+}

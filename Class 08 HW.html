@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+<meta charset="utf-8" />
+<title>Calculator</title>
+<link rel="stylesheet" type="text/css" href="Class_08_HW.css">
+
+<script type="text/javascript">
+
+
+//Inputs
+
+var num1 = " ";
+
+var num2 = " ";
+
+var operator = " ";
+
+var needClear = "off";
+
+function Button (entry)  {
+	
+	if (needClear === "on") {
+		document.getElementById("displayfield").innerHTML = "Press Clear";
+	}
+
+	if (operator === " ") {
+	 	num1 += entry.toString();
+	 	document.getElementById("displayfield").innerHTML = document.getElementById("displayfield").innerHTML.toString() + entry.toString();
+
+	} else {
+		num2 += entry.toString();
+		document.getElementById("displayfield").innerHTML = document.getElementById("displayfield").innerHTML.toString() + entry.toString();
+	}
+}
+
+
+var addButton = function() {
+	 operator = "+";
+	 document.getElementById("displayfield").innerHTML = document.getElementById("displayfield").innerHTML.toString() + "+".toString();
+}
+
+var subtractButton = function() {
+	operator = "-";
+	document.getElementById("displayfield").innerHTML = document.getElementById("displayfield").innerHTML.toString() + "-".toString();
+}
+
+var multiplyButton = function() {
+	operator = "*";
+	document.getElementById("displayfield").innerHTML = document.getElementById("displayfield").innerHTML.toString() + "*".toString();
+}
+
+var divideButton = function() {
+	operator= "/";
+	document.getElementById("displayfield").innerHTML = document.getElementById("displayfield").innerHTML.toString() + "/".toString();
+}
+
+var equalsButton = function() {
+	compute(num1, num2);
+	needClear = "on";
+	
+
+
+}
+
+var clearButton = function () {
+	num1 = " ";
+	num2 = " ";
+	operator = " ";
+	needClear = "off";
+	document.getElementById("displayfield").innerHTML = " ";
+}
+
+//Operations
+var compute = function(num1, num2) {
+	if (operator === "+") {
+		document.getElementById("displayfield").innerHTML = (parseInt(num1) + parseInt(num2));
+	}
+
+	if (operator === "*") {
+		document.getElementById("displayfield").innerHTML = (parseInt(num1) * parseInt(num2));
+	}
+
+	if (operator === "-") {
+		document.getElementById("displayfield").innerHTML = (parseInt(num1) - parseInt(num2));
+	}
+
+	if (operator === "/") {
+		document.getElementById("displayfield").innerHTML = (parseInt(num1) / parseInt(num2));
+	}
+}
+
+
+</script>
+</head>
+
+<body>
+
+
+<div class = "container">
+	<div id = "displayfield">
+	</div>
+
+	<P>
+		<button class = "button" onclick=Button(7)>7</button>
+		<button class = "button" onclick=Button(8)>8</button>
+		<button class = "button" onclick=Button(9)>9</button>
+		<button class = "button" onclick="addButton()">+</button>
+		<button class = "button" onclick="subtractButton()">-</button>
+	</p>
+
+	<p>
+		<button class = "button" onclick=Button(4)>4</button>
+		<button class = "button" onclick=Button(5)>5</button>
+		<button class = "button" onclick=Button(6)>6</button>
+		<button class = "button" onclick="multiplyButton()">*</button>
+		<button class = "button" onclick="divideButton()">/</button>
+	</p>
+
+	<p>
+		<button class = "button" onclick=Button(1)>1</button>
+		<button class = "button" onclick= Button(2)>2</button>
+		<button class = "button" onclick=Button(3)>3</button>
+		<button class = "button"onclick=Button(0)>0</button>
+		<button class = "button" onclick="clearButton()">C</button>
+	</p>
+
+	<p>
+		<button class = "equalsbutton"onclick="equalsButton()">=</button>
+	</P>
+</container>
+
+
+
+	
+
+</body>
+
+</html>
